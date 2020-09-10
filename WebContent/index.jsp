@@ -5,7 +5,7 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Blood Bank</title>
-	<link rel="stylesheet" href="style/styles.css"/>
+	<link rel="stylesheet" href="styles/styles.css"/>
 </head>
 <body>
 	<header>
@@ -52,6 +52,7 @@
 	</main>
 	
 	<footer>
+		
 	</footer>
 </body>
 </html>
