@@ -40,7 +40,7 @@
 		  	
 		  	<div class="form-group">
 		    	<label>Blood Group</label>
-		    	<select name="sex">
+		    	<select name="bloodGroup">
 			      	<option>A</option>
 			      	<option>B</option>
 			      	<option>AB</option>

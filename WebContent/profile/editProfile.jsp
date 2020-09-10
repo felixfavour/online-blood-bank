@@ -9,10 +9,7 @@
 </head>
 <body>
 	<h1>Welcome <%
-		Donor donor = (Donor) request.getAttribute("donor");
-		String fullName = donor.getName();
-		out.print(fullName);
-		
+			
 	%> </h1>
 </body>
 </html>

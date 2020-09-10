@@ -16,6 +16,9 @@ import com.bloodbank.persist.DatabaseConnection;
 
 @WebServlet(name = "registerServlet", urlPatterns = {"/registerDonor"})
 public class RegisterServlet extends HttpServlet {
+	
+	String localizedMessageException = "";
+	String status = "";
 
 	private static final long serialVersionUID = 7891410414445453938L;
 
@@ -28,7 +31,7 @@ public class RegisterServlet extends HttpServlet {
 		String address = req.getParameter("address");
 		String city = req.getParameter("city");
 		String sex = req.getParameter("sex");
-		String weight = req.getParameter("weight");
+		int weight = Integer.valueOf(req.getParameter("weight"));
 		String dob = req.getParameter("dob");
 		String bloodGroup = req.getParameter("bloodGroup");
 		String contactNumber = req.getParameter("contactNumber");
@@ -47,18 +50,24 @@ public class RegisterServlet extends HttpServlet {
 			contactNumber
 		);
 		
-		addDonorToDatabase(donor);
-		
-		req.setAttribute("donor", donor);
-		RequestDispatcher view = req.getRequestDispatcher("profile/editProfile.jsp");
-		view.forward(req, res);
+		String operationStatus = addDonorToDatabase(donor);
+		RequestDispatcher view = req.getRequestDispatcher("login/index.jsp");
+		if (operationStatus == "SUCCESS") {
+			view.forward(req, res);
+		} else {
+			
+		}
 	}
 	
-	private void addDonorToDatabase(Donor donor) {
-
+	/*
+	 * @returns "SUCCESS" if donor was sucessfully registered
+	 * @returns [localizedMessageException] if donor was not registered*/
+	private String addDonorToDatabase(Donor donor) {
+		
 		try {
 			Connection con = DatabaseConnection.getDatabase();
-			PreparedStatement statement = con.prepareStatement("Insert into donors values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			
+			PreparedStatement statement = con.prepareStatement("Insert into donors(name, username, emailAddress, password, address, city, sex, weight, dob, bloodGroup, contactNumber) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			statement.setString(1, donor.getName());
 			statement.setString(2, donor.getUsername());
 			statement.setString(3, donor.getEmailAddress());
@@ -66,18 +75,24 @@ public class RegisterServlet extends HttpServlet {
 			statement.setString(5, donor.getAddress());
 			statement.setString(6, donor.getCity());
 			statement.setString(7, donor.getSex());
-			statement.setString(8, donor.getWeight());
+			statement.setInt(8, donor.getWeight());
 			statement.setString(9, donor.getDob());
 			statement.setString(10, donor.getBloodGroup());
 			statement.setString(11, donor.getContactNumber());
 			
 			statement.executeUpdate();
+			status = "SUCCESS";
 			statement.close();
 			con.close();
 			
+			
 		} catch(Exception ex) {
+			localizedMessageException = ex.getLocalizedMessage();
+			status = localizedMessageException;
 			ex.printStackTrace();
 		}
+		return status;
+		
 	}
 
 }

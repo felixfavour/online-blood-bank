@@ -10,12 +10,12 @@ public class Donor {
 	String address;
 	String city;
 	String sex;
-	String weight;
+	int weight;
 	String dob;
 	String bloodGroup;
 	String contactNumber;	
 	
-	public Donor(String name, String username, String emailAddress, String password, String address, String city, String sex, String weight, String dob, String bloodGroup, String contactNumber) {
+	public Donor(String name, String username, String emailAddress, String password, String address, String city, String sex, int weight, String dob, String bloodGroup, String contactNumber) {
 		this.name = name;
 		this.username = username;
 		this.emailAddress = emailAddress;
@@ -87,11 +87,11 @@ public class Donor {
 		this.sex = sex;
 	}
 
-	public String getWeight() {
+	public int getWeight() {
 		return weight;
 	}
 
-	public void setWeight(String weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
 
