@@ -1,3 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
-	background: green;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f8e3e7;
+  font-family: "Roboto", sans-serif;
+}
+
+/* NAVIGATIONS */
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 5rem;
+}
+
+nav .nav-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+}
+
+nav .nav-more li a {
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+nav .nav-auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+nav .nav-auth li a {
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+}
+
+nav .nav-auth .register {
+  border: 1px solid transparent;
+  background-color: darkred;
+  margin: 5px;
+  padding: 10px 20px;
+  color: #fff;
 }

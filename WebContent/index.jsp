@@ -20,7 +20,7 @@
 			</ul>
 			<ul class="nav-auth">
 				<li><a href="#">LOG IN</a></li>
-				<li><a href="#">REGISTER</a></li>
+				<li><a class="register" href="#">REGISTER</a></li>
 			</ul>
 		</nav>
 	</header>
