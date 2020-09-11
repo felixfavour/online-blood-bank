@@ -26,30 +26,38 @@
 	</header>
 	
 	<main>
-		<div>			
-			<h1>Welcome to the Online Bloodbank</h1>
-		</div>
-		
-		<div>
-			<p>Are you a blood</p>
+		<div class="hero">			
+            <h1>Welcome to the Online Bloodbank</h1>
+            <p>Are you a blood</p>
 			<ul class="nav-auth">
-				<li><a href="register">DONOR</a></li>
-				<li><a href="search">SEEKER</a></li>
+				<li><a  class="register" href="register">DONOR</a></li>
+				<li><a  class="search" href="search">SEEKER</a></li>
 			</ul>
-		</div>
-		
-		<div>
+		</div> 
+    </main>
+
+		<div class="features">
 			<div>
 				<h3>Why Donate Blood?</h3>
-				<p>hfdjkfh fkjsjkfsfs kfskjfshk sfjfsghjgfkjgfsj fjsgjfsgjfshg </p>
-			</div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos commodi, provident voluptatum nobis eaque, accusamus numquam, reiciendis explicabo suscipit nostrum sunt! Quos suscipit eum nihil laudantium vel libero ad accusantium?</p>
+            </div>
+            
 			<div>
 				<h3>How to Donate?</h3>
-				<p>hfdjkfh fkjsjkfsfs kfskjfshk sfjfsghjgfkjgfsj fjsgjfsgjfshg </p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos commodi, provident voluptatum nobis eaque, accusamus numquam, reiciendis explicabo suscipit nostrum sunt! Quos suscipit eum nihil laudantium vel libero ad accusantium?</p>
+            </div>
+
+            <div>
+				<h3>Ask for Help?</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos commodi, provident voluptatum nobis eaque, accusamus numquam, reiciendis explicabo suscipit nostrum sunt! Quos suscipit eum nihil laudantium vel libero ad accusantium?</p>
 			</div>
 			
 		</div>
-	</main>
+
+        <section class="info">
+            <p>We have Donors in 1000 Major Cities Worldwide </p>
+          <p>  with that number growing daily </p>
+        </section>
 	
 	<footer>
 		
