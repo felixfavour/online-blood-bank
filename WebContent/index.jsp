@@ -59,8 +59,13 @@
           <p>  with that number growing daily </p>
         </section>
 	
-	<footer>
-		
-	</footer>
+		<footer>
+			<h3>BLOOD BANK</h3>
+			<p>DONOR</p>
+			<p>SEEKER</p>
+			<p>FAQ</p>
+			<p>TERMS & CONDITIONS</p>
+			<p>CONTACT US</p>
+		</footer>
 </body>
 </html>

@@ -164,3 +164,31 @@ nav .nav-auth .register {
 	text-align: center;
 	margin: 4rem 0;
   }
+
+  /* FOOTER */
+footer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+			flex-direction: row;
+	-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+			justify-content: space-between;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	overflow: hidden;
+	padding: 3rem 25rem;
+	margin-top: 7rem;
+	background-color: darkred;
+	color: #fff;
+  }
+  
+  footer p {
+	font-weight: 300;
+	font-size: 15px;
+  }
+  
