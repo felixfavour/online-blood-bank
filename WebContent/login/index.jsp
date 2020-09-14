@@ -7,7 +7,7 @@
 <title>Donor Login</title>
 </head>
 <body>
-	<form action="../LoginServlet" method="post">
+	<form action="/BloodBank/login" method="post">
 		<div class="form-group">
 		    <label>Username</label>
 		    <input type="text" name="username">

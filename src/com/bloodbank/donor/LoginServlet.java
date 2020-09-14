@@ -15,12 +15,15 @@ import com.bloodbank.persist.DatabaseConnection;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginServlet")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	String localizedMessageException = "";
 	String status = "";
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
@@ -29,10 +32,10 @@ public class LoginServlet extends HttpServlet {
 		String operationStatus = loginUser(username, password);
 		
 		if (operationStatus == "SUCCESS") {
-			RequestDispatcher view = request.getRequestDispatcher("profile/editProfile.jsp");
-			view.forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/profile/editProfile.jsp");
 		} else {
 			RequestDispatcher view = request.getRequestDispatcher("login/index.jsp");
+			request.setAttribute("status", status);
 			view.forward(request, response);
 		}
 		
@@ -47,10 +50,11 @@ public class LoginServlet extends HttpServlet {
 
 			while (resultSet.next()) {				
 				if (resultSet.getString("password").contentEquals(password)) {
-					System.out.println("SUCCESS");
 					status = "SUCCESS";
+					System.out.println(status);
 				} else {
 					status = "Wrong Password";
+					System.out.println(status);
 				}
 			}			
 			

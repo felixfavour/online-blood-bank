@@ -1,19 +1,17 @@
 package com.bloodbank.donor;
 
-import java.util.Date;
-
 public class Donor {
-	String name;
-	String username;
-	String emailAddress;
-	String password;
-	String address;
-	String city;
-	String sex;
-	int weight;
-	String dob;
-	String bloodGroup;
-	String contactNumber;	
+	private String name;
+	private String username;
+	private String emailAddress;
+	private String password;
+	private String address;
+	private String city;
+	private String sex;
+	private int weight;
+	private String dob;
+	private String bloodGroup;
+	private String contactNumber;	
 	
 	public Donor(String name, String username, String emailAddress, String password, String address, String city, String sex, int weight, String dob, String bloodGroup, String contactNumber) {
 		this.name = name;

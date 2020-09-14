@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Mobilink Paging Service</title>
 </head>
 <body>
-
+	<header>
+		<h1>Help us to Help you get better.</h1>
+	</header>
+	
+	<h3>Contact us through our Mobilink: <a href="#">+234 8023478294</a></h3>
 </body>
 </html>

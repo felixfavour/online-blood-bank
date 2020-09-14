@@ -19,8 +19,8 @@
 				<li><a href="#">TERMS</a></li>
 			</ul>
 			<ul class="nav-auth">
-				<li><a href="#">LOG IN</a></li>
-				<li><a class="register" href="#">REGISTER</a></li>
+				<li><a href="login/index.jsp">LOG IN</a></li>
+				<li><a class="register/index.jsp" href="register">REGISTER</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -28,6 +28,7 @@
 	<main>
 		<div class="hero">			
             <h1>Welcome to the Online Bloodbank</h1>
+            
             <p>Are you a blood</p>
 			<ul class="nav-auth">
 				<li><a  class="register" href="register">DONOR</a></li>
