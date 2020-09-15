@@ -4,79 +4,121 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Become a Donor · BloodBank</title>
+		<title>Become a Donor ï¿½ BloodBank</title>
+		<link rel="stylesheet" href="../styles/register.css">
 	</head>
 	<body>
-		<form action="../registerDonor" method="post">
-			<div class="form-group">
-			    <label>Full Name</label>
-			    <input type="text" name="name">
-		  	</div>
-		  	
-			<div class="form-group">
-			    <label>Username</label>
-			    <input type="text" name="username">
-		  	</div>
-		  	
-			<div class="form-group">
-			    <label>Email address</label>
-			    <input type="email" name="emailAddress">
-		  	</div>
-		  	
-			<div class="form-group">
-			    <label>Password</label>
-			    <input type="password" name="">
-		  	</div>
-		  	
-			<div class="form-group">
-			    <label>Confirm Password</label>
-			    <input type="password" name="password">
-		  	</div>
-		  	
-			<div class="form-group">
-			    <label>Phone Number</label>
-			    <input type="text" name="contactNumber">
-		  	</div>
-		  	
-		  	<div class="form-group">
-		    	<label>Blood Group</label>
-		    	<select name="bloodGroup">
-			      	<option>A</option>
-			      	<option>B</option>
-			      	<option>AB</option>
-			      	<option>O</option>	
-		    	</select>
-		  	</div>
-		  	
-			<div class="form-group">
-			    <label>House Address</label>
-			    <input type="text" name="address">
-		  	</div>
-		  	
-			<div class="form-group">
-			    <label>City</label>
-			    <input type="text" name="city">
-		  	</div>
-		  	
-		  	<div class="form-group">
-		    	<label>Sex</label>
-		    	<select name="sex">
-			      	<option>Male</option>
-			      	<option>Female</option>
-		    	</select>
-		  	</div>
-		  	
-			<div class="form-group">
-			    <label>Weight</label>
-			    <input type="text" name="weight">
-		  	</div>
-		  	
-			<div class="form-group">
-			    <label>Date of Birth</label>
-			    <input type="date" name="dob">
-		  	</div>
-		  	
-			<input type="submit" value="Register"><br>
-		</form>
+		<header>
+			<nav>
+				<span>
+					BLOOD BANK
+				</span>
+				<ul class="nav-more">
+					<li><a href="#">LEARN MORE</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">TERMS</a></li>
+				</ul>
+				<ul class="nav-auth">
+					<li><a href="#">LOG IN</a></li>
+					<li><a class="register" href="#">REGISTER</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<div class="appreciation">
+			<h2 class="heading">Get Started now</h2>
+			<p class="subheading">Register as a Blood DONOR </p>
+		</div>
+
+		<form action="../registerDonor" method="post" class="myForm">
+
+			<div class="formFlex">
+        <div class="formDetails">
+            <label for="name">FULL NAME</label>
+            <input type="text" placeholder="Name">
+        </div>
+        <div class="formDetails">
+            <label for="username">USERNAME</label>
+            <input type="text" placeholder="username">
+        </div>
+        </div>
+
+        <div class="formFlex">
+        <div class="formDetails">
+            <label for="email">EMAIL ADDRESS</label>
+            <input type="email" placeholder="holla@ ... .com">
+        </div>
+        <div class="formDetails">
+            <label for="password">PASSWORD</label>
+            <input type="password" placeholder="password">
+        </div>
+
+        </div>
+
+        <div class="formFlex">
+        <div class="formDetails">
+            <label for="confirmpassword">CONFIRM PASSWORD</label>
+            <input type="password" placeholder="confirm password">
+        </div>
+        <div class="formDetails">
+            <label for="contact">CONTACT NUMBER</label>
+            <input type="number" placeholder="+234 132 32142">
+        </div>
+
+        </div>
+        <div class="formFlex">
+
+        <div class="form-group">
+            <label>BLOOD GROUP</label>
+            <select name="bloodGroup">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>AB</option>
+                  <option>O</option>	
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>SEX</label>
+            <select name="sex">
+                  <option>Male</option>
+                  <option>Female</option>
+            </select>
+          </div>
+
+          
+        <div class="formDetails">
+            <label for="weight">WEIGHT</label>
+            <input type="text" placeholder="weight">
+        </div>
+        </div>
+
+        <div class="formFlex">
+        <div class="formDetails">
+            <label for="dateofbirth">DATE OF BIRTH</label>
+            <input type="date" placeholder="date of birth">
+        </div>
+
+        <div class="formDetails">
+            <label for="address">ADDRESS</label>
+            <input type="text" placeholder="Address">
+        </div>
+
+        </div>
+
+        <button class="btn" type="submit">REGISTER</button>
+        <p>Already a donor? <a href="#" class="login">Log in</a></p>
+    </form>
+
+    <footer>
+        <div class="footerdetails">
+        <h3>BLOOD BANK</h3>
+        <p>DONOR</p>
+        <p>SEEKER</p>
+        <p>FAQ</p>
+        <p>TERMS & CONDITIONS</p>
+        <p>CONTACT US</p>
+        </div>
+	</footer>
 	</body>
 </html>
