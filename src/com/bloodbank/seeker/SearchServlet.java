@@ -26,6 +26,10 @@ public class SearchServlet extends HttpServlet {
 	String localizedMessageException = "";
 	String status = "";
      
+	
+/**
+ * Overridden method that is invoked when a GET request is sent to the Servlet.
+ */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String city = request.getParameter("city");
 		String bloodGroup = request.getParameter("bloodGroup");

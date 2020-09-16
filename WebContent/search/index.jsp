@@ -39,7 +39,7 @@
 			} else {
 				// Lifesaver code should only run when there is no Donor returned.
 				
-				out.print("<h3 class=\"emptySearchMessage\"> SORRY, DONORS ARE NOT AVAILABE WITH THE FOLLOWING BLOOD GROUP AND AREA </h3>"+
+				out.print("<h3 class=\"\"> SORRY, DONORS ARE NOT AVAILABE WITH THE FOLLOWING BLOOD GROUP AND AREA </h3>"+
 						"<button id=\"lifesaverBtn\">Check Lifesavers</button>");
 				
 				

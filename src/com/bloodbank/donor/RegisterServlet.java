@@ -14,14 +14,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bloodbank.persist.DatabaseConnection;
 
-@WebServlet(name = "registerServlet", urlPatterns = {"/registerDonor"})
+@WebServlet(name = "registerServlet", urlPatterns = {"/register"})
 public class RegisterServlet extends HttpServlet {
 	
 	String localizedMessageException = "";
 	String status = "";
 
 	private static final long serialVersionUID = 7891410414445453938L;
-
+	
+/**
+ * Overridden method that is invoked when a POST request is sent to the Servlet.
+ */
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		String name = req.getParameter("name");
@@ -51,22 +54,33 @@ public class RegisterServlet extends HttpServlet {
 		);
 		
 		String operationStatus = addDonorToDatabase(donor);
-		RequestDispatcher view = req.getRequestDispatcher("login/index.jsp");
+		
+		/*
+		 * Instantiate a RequestDispatcher to redirect and send a response to the client
+		 * when the Donor has been successfully registered
+		 */
 		if (operationStatus == "SUCCESS") {
-			view.forward(req, res);
+			res.sendRedirect(req.getContextPath() + "/login/index.jsp");
 		} else {
-			
+			RequestDispatcher view = req.getRequestDispatcher("register/index.jsp#dialog");
+			req.setAttribute("error", status);
+			view.forward(req, res);
 		}
 	}
 	
-	/*
-	 * @returns "SUCCESS" if donor was sucessfully registered
+	/**
+	 * @param donor
+	 * @returns "SUCCESS" if [donor] was sucessfully registered
 	 * @returns [localizedMessageException] if donor was not registered*/
 	private String addDonorToDatabase(Donor donor) {
 		
 		try {
-			Connection con = DatabaseConnection.getDatabase();
-			
+			// Initialize the Database Connnection
+			Connection con = DatabaseConnection.getDatabase(); 
+			/*
+			 * Create a [PreparedStatement] instance that would hold SQL query
+			 * The Query would insert each field/attribute of the Donor to the database.
+			 */
 			PreparedStatement statement = con.prepareStatement("Insert into donors(name, username, emailAddress, password, address, city, sex, weight, dob, bloodGroup, contactNumber) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			statement.setString(1, donor.getName());
 			statement.setString(2, donor.getUsername());
@@ -80,13 +94,16 @@ public class RegisterServlet extends HttpServlet {
 			statement.setString(10, donor.getBloodGroup());
 			statement.setString(11, donor.getContactNumber());
 			
+			// Execute the query in the PreparedStatement instance
 			statement.executeUpdate();
+			// If insertion operation is Successful.
 			status = "SUCCESS";
 			statement.close();
 			con.close();
 			
 			
 		} catch(Exception ex) {
+			// If there are any exceptions during the course of the Database operation it is caught here.
 			localizedMessageException = ex.getLocalizedMessage();
 			status = localizedMessageException;
 			ex.printStackTrace();

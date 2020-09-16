@@ -31,8 +31,8 @@
             
             <p>Are you a blood</p>
 			<ul class="nav-auth">
-				<li><a  class="register" href="register">DONOR</a></li>
-				<li><a  class="search" href="search">SEEKER</a></li>
+				<li><a  class="register" href="register/index.jsp">DONOR</a></li>
+				<li><a  class="search" href="search/index.jsp">SEEKER</a></li>
 			</ul>
 		</div> 
     </main>

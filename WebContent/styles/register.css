@@ -177,6 +177,32 @@ nav .nav-auth .register {
     color: darkred;
   }
   
+  #dialog {
+    background-color: #f8e3e7;
+    border: 6px solid darkred;
+    top: auto;
+    right: auto;
+    padding: 10px;
+    margin: auto;
+    width: 30%;
+    text-align: center
+  }
+
+  #dialog header {
+    background-color: darkred;
+    padding: 8px;
+    color: #f8e3e7;
+  }
+
+  #dialog header .header {
+    font-size: 16px;
+  }
+
+  #dialog .close-btn {
+    float: right;
+    font-size: 10px;
+  }
+  
   footer {
     overflow: hidden;
     margin-top: 7rem;
