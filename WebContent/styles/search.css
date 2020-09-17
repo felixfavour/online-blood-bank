@@ -111,7 +111,9 @@ form {
     border-right: none;
     border-bottom: 1px solid #000;
     background: transparent;
+    padding: 6px;
     width: 25rem;
+    font-size: 18px;
     margin: 10px 20px;
     outline: none;
   }
@@ -119,19 +121,27 @@ form {
   form select {
     width: 10rem;
     height: 32px;
-    outline: none;
-    border: 1px solid transparent;
+    border: none;
+    padding: 6px;
+    font-size: 18px;
+    background-color: transparent;
+    border-bottom: 1px solid;
     margin: 10px 20px;
   }
   
-  form .btn {
+  form .btn, #lifesaverBtn {
     border: 1px solid transparent;
     background-color: darkred;
     outline: none;
+    font-size: 18px;
     margin: 10px 20px;
     padding: 10px 35px;
     cursor: pointer;
     color: #fff;
+  }
+  
+  .lifesaver {
+  	text-align: center;
   }
 
   .cards {
@@ -145,6 +155,16 @@ form {
     -webkit-box-shadow: 3px 5px 0 black;
             box-shadow: 3px 5px 0 black;
     padding: 3rem 5rem;
+  }
+  
+  #lifesaverSection .cards {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .no-donors-message {
+  	font-family: "Roboto", sans-serif;
+  	font-size: 16px
   }
   
   .cards .card_details {
@@ -162,10 +182,12 @@ form {
         -ms-flex-pack: center;
             justify-content: center;
     margin: 0 10px;
+    background-color: white;
   }
   
   .cards .card_details img {
     width: 50%;
+    float: left;
     -o-object-fit: contain;
        object-fit: contain;
   }

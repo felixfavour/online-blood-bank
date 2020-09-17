@@ -9,7 +9,7 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Donors Around Me</title>
-	<link rel="stylesheet" href="../styles/search.css">
+	<link rel="stylesheet" href="/BloodBank/styles/search.css">
 </head>
 <body>
 	<header>
@@ -35,8 +35,8 @@
 		</div>
 
 	<form action="/BloodBank/search" method="get">
-		<input id="cityInput" name="city" type="text" placeholder="Search City by City">
-		<select name="bloodGroup">
+		<input id="cityInput" name="city" type="text" placeholder="Search Donor by City">
+		<select id="bloodGroupInput" name="bloodGroup">
 			<option>A</option>
 			<option>B</option>
 			<option>AB</option>
@@ -45,30 +45,6 @@
 		<button type="submit" class="btn">Search</button>
 	</form>
 
-	<div class="cards">
-        <div class="card_details">
-          <img src="./please-add-an avatar" alt="photo">
-          <div class="texts">
-            <p>Felix Kelechi</p>
-            <p>Age</p>
-            <p>Lmao</p>
-            <p>Lmao</p>
-            <p>Hello</p>
-          </div>
-        </div>
-
-        <div class="card_details">
-          <img src="./please-add-an-avatar" alt="photo">
-          <div class="texts">
-            <p>Felix Kelechi</p>
-            <p>Age</p>
-            <p>Lmao</p>
-            <p>Lmao</p>
-            <p>Hello</p>
-          </div>
-        </div>
-      </div>
-	
 	<%
 		try {
 			// For Donors
@@ -79,26 +55,54 @@
 			boolean isDonorSearchEmpty = donors.size() == 0;
 			
 			if (!isDonorSearchEmpty) {
+				out.print("<div class=\"cards\">");
 				for (int i = 0; i < donors.size(); i++) {
-			    	out.print("<h3>" + donors.get(0).toString() + "</h3>");
+					Donor donor = donors.get(i);
+					out.print(
+							"<div class=\"card_details\">"+
+							"<img class=\"card-img\" src=\"/BloodBank/img/chris_rock.png\" alt=\"photo\">"+
+							"<div class=\"texts\">"+
+							"<h3>"+donor.getName()+"</h3>"+
+							"<p><b>Blood Group: </b>"+donor.getBloodGroup()+"</p>"+
+							"<p><b>City: </b>"+donor.getCity()+"</p>"+
+							"<p><b>Email Address: </b>"+donor.getEmailAddress()+"</p>"+
+							"<p><b>Sex: </b>"+donor.getSex()+"</p>"+
+							"<p><b>Weight: </b>"+String.valueOf(donor.getWeight())+"kg</p>"+
+							"<p><b>Contact Number: </b>"+donor.getContactNumber()+"</p>"+
+							"<p><b>Date of Birth: </b>"+donor.getDob()+"</p>"+
+							"</div>"+
+							"</div>"
+					);
 			    }
+				out.print("</div>");
 			} else {
 				// Lifesaver code should only run when there is no Donor returned.
 				
-				out.print("<h3 class=\"\"> SORRY, DONORS ARE NOT AVAILABE WITH THE FOLLOWING BLOOD GROUP AND AREA </h3>"+
-						"<button id=\"lifesaverBtn\">Check Lifesavers</button>");
+				out.print(
+						"<div class=\"lifesaver\">" +
+						"<h3 class=\"no-donors-message\"> SORRY, DONORS ARE NOT AVAILABE WITH THE FOLLOWING BLOOD GROUP AND AREA </h3>"+
+						"<button id=\"lifesaverBtn\">Check for Lifesaver</button>" +
+						"</div>");
 				
 				
 				// For Lifesavers
 				boolean isLifesaverSearchEmpty = lifesaver == null;
 				
 				if (!isLifesaverSearchEmpty) {
-					out.print("<div id=\"lifesaverSection\"  hidden >"+
-							"<h3> HURRAY! WE FOUND A LIFESAVER </h3>" + 
-							"<div>"+ lifesaver.toString() + "</div>" +
+					out.print("<div id=\"lifesaverSection\" class=\"lifesaver\" hidden >"+
+							"<div class=\"cards\">"+
+							"<div class=\"card_details\">"+
+							"<img class=\"card-img\" src=\"/BloodBank/img/chris_rock.png\" alt=\"photo\">"+
+							"<div class=\"texts\">"+
+							"<h3>"+lifesaver.getName()+"</h3>"+
+							"<p><b>City: </b>"+lifesaver.getCity()+"</p>"+
+							"<p><b>Contact Number: </b>"+lifesaver.getContactNumber()+"</p>"+
+							"<p><b>City: </b>"+lifesaver.getEmail()+"</p>"+
+							"</div>"+
+							"</div>" +
 							"</div>");
 				} else {
-					out.print("<div id=\"lifesaverSection\" class=\"emptySearchMessage\" hidden >"+
+					out.print("<div id=\"lifesaverSection\" class=\"emptySearchMessage lifesaver\" hidden >"+
 							"<h3> SORRY, THERE ARE NO LIFESAVING CONTACTS ASSIGNED TO YOUR CITY AT THE MOMENT </h3>" + 
 							"<a href=\"mobilink\">Although, You could request more assistance through our Mobilink Paging Service</a>"+
 							"</div>");
@@ -113,7 +117,13 @@
 	let lifesaverBtn = document.querySelector("#lifesaverBtn");
 	let lifesaverSection = document.querySelector("#lifesaverSection");
 	let cityFormInput = document.querySelector("#cityInput");
+	let bgInput = document.querySelector("#bloodGroupInput");	
 	let emptySearchMessage = document.querySelector(".emptySearchMessage");
+	let bloodGroup = window.location.href.split('=')[2];
+	let city = window.location.href.split('=')[1].split('&')[0]
+	
+	cityFormInput.value = city;
+	bgInput.value = bloodGroup;
 	
 	lifesaverBtn.addEventListener('click', () => {
 		if(lifesaverSection.hidden) {
@@ -127,6 +137,7 @@
 		emptySearchMessage.hidden = true
 	}	
 	
+		
 	
 </script>
 </body>

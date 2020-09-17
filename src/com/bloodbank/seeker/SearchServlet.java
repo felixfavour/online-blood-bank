@@ -93,8 +93,8 @@ public class SearchServlet extends HttpServlet {
 				System.out.println(donor.getUsername());
 				
 				donors.add(donor);
-				connection.close();
-			}			
+			}	
+			connection.close();		
 			
 			status = "SUCCESS";	
 			System.out.println(status);		
