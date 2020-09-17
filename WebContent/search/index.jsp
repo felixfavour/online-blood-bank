@@ -9,19 +9,65 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Donors Around Me</title>
+	<link rel="stylesheet" href="../styles/search.css">
 </head>
 <body>
-	<h1>Find Donors around my city</h1>
+	<header>
+		<nav>
+		  <span>
+			BLOOD BANK
+		  </span>
+		  <ul class="nav-more">
+			<li><a href="#">LEARN MORE</a></li>
+			<li><a href="#">FAQ</a></li>
+			<li><a href="#">TERMS</a></li>
+		  </ul>
+		  <ul class="nav-auth">
+			<li><a href="#">LOG IN</a></li>
+			<li><a class="register" href="#">REGISTER</a></li>
+		  </ul>
+		</nav>
+		</header>
+		
+		<div class="appreciation">
+			<h2 class="heading">Find a Donor</h2>
+			<p class="subheading">Select the categories to filter your search </p>
+		</div>
+
 	<form action="/BloodBank/search" method="get">
-		<input id="cityInput" name="city" type="text">
+		<input id="cityInput" name="city" type="text" placeholder="Search City by City">
 		<select name="bloodGroup">
 			<option>A</option>
 			<option>B</option>
 			<option>AB</option>
 			<option>O</option>
 		</select>
-		<input type="submit" value="Search Donors">
+		<button type="submit" class="btn">Search</button>
 	</form>
+
+	<div class="cards">
+        <div class="card_details">
+          <img src="./please-add-an avatar" alt="photo">
+          <div class="texts">
+            <p>Felix Kelechi</p>
+            <p>Age</p>
+            <p>Lmao</p>
+            <p>Lmao</p>
+            <p>Hello</p>
+          </div>
+        </div>
+
+        <div class="card_details">
+          <img src="./please-add-an-avatar" alt="photo">
+          <div class="texts">
+            <p>Felix Kelechi</p>
+            <p>Age</p>
+            <p>Lmao</p>
+            <p>Lmao</p>
+            <p>Hello</p>
+          </div>
+        </div>
+      </div>
 	
 	<%
 		try {
