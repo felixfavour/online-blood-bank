@@ -10,66 +10,35 @@ body {
 
 /* NAVIGATIONS */
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 2rem 5rem;
-}
-
-nav .nav-more {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  list-style: none;
-}
-
-nav .nav-more li a {
-  margin: 10px;
-  text-decoration: none;
-  color: black;
-}
-
-nav .nav-auth {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  list-style: none;
-}
-
-nav .nav-auth li a {
-  text-decoration: none;
-  color: black;
-  margin: 10px;
-}
-
-nav .nav-auth .register {
-  border: 1px solid transparent;
-  background-color: darkred;
-  margin: 5px;
-  padding: 10px 20px;
-  color: #fff;
-}
+	padding: 2rem 5rem;
+  }
+  
+  nav .nav-more {
+	list-style: none;
+  }
+  
+  nav .nav-more li a {
+	margin: 10px;
+	text-decoration: none;
+	color: black;
+  }
+  
+  nav .nav-auth {
+	list-style: none;
+  }
+  
+  nav .nav-auth li a {
+	text-decoration: none;
+	color: #000;
+  }
+  
+  nav .nav-auth .register {
+	border: 1px solid transparent;
+	background-color: #DC3545;
+	margin: 5px;
+	padding: 10px 20px;
+	color: #fff;
+  }
 
 /* LANDING PAGE */
 .hero {
@@ -86,17 +55,10 @@ nav .nav-auth .register {
 	-webkit-box-pack: center;
 		-ms-flex-pack: center;
 			justify-content: center;
-	height: 50vh;
+	height: 70vh;
   }
   
   .hero .nav-auth {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-		-ms-flex-direction: row;
-			flex-direction: row;
 	list-style: none;
   }
   
@@ -104,43 +66,136 @@ nav .nav-auth .register {
 	margin: 10px;
   }
   
-  .hero .nav-auth li a {
-	text-decoration: none;
-  }
-  
   .hero .nav-auth .register {
-	border: 1px solid transparent;
-	background-color: darkred;
 	padding: 10px 50px;
-	color: #fff;
   }
   
   .hero .nav-auth .search {
-	border: 1.5px solid darkred;
+	background-color: transparent;
+	border: 1.5px solid #DC3545;
 	padding: 10px 50px;
 	color: #000;
   }
   
-  /* GRID SECTION */
-  .features {
+  /* CARD SECTION IN HOME PAGE*/
+  .cards {
+	padding: 1rem 10rem;
+  }
+  
+  .cards div {
+	margin: 0 20px;
+  }
+  
+  .info {
+	text-align: center;
+	margin: 4rem 0;
+  }
+
+  /* APPRECIATION IN ALMOST ALL THE PAGES */
+  .appreciation {
+	margin: 3rem 0;
+	text-align: center;
+  }
+  
+  .appreciation .heading {
+	font-size: 3rem;
+	letter-spacing: 2px;
+	font-weight: 300;
+  }
+  
+  .appreciation .subheading {
+	font-size: 1rem;
+	font-weight: 400;
+	color: #4f4f4f;
+	letter-spacing: 1.5px;
+  }
+
+  /* FAQ ACCORDION PAGE */
+
+  .accordion-section .panel-default > .panel-heading {
+	border: 0;
+	background: #f4f4f4;
+	padding: 0;
+  }
+  
+  .accordion-section .panel-default .panel-title a {
+	display: block;
+	font-size: 1rem;
+	text-decoration: none;
+  }
+  
+  .accordion-section .panel-default .panel-title a:after {
+	font-family: 'FontAwesome';
+	font-style: normal;
+	font-size: 3rem;
+	content: "\f106";
+	color: #1f7de2;
+	float: right;
+	margin-top: -12px;
+  }
+  
+  .accordion-section .panel-default .panel-title a.collapsed:after {
+	content: "\f107";
+  }
+  
+  .accordion-section .panel-default .panel-body {
+	font-size: 1.2rem;
+  }
+
+/* LOGIN PAGE */
+/* FORM */
+.myForm {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: horizontal;
+	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-		-ms-flex-direction: row;
-			flex-direction: row;
+		-ms-flex-direction: column;
+			flex-direction: column;
 	-webkit-box-align: center;
 		-ms-flex-align: center;
 			align-items: center;
-	-webkit-box-pack: center;
-		-ms-flex-pack: center;
-			justify-content: center;
-	padding: 1rem 10rem;
-	margin: 5rem 0;
+	margin-top: 6rem;
   }
   
-  .features div {
+  .myForm input {
+	width: 400px;
+  }
+  
+  .myForm button {
+	margin-top: 20px;
+	padding: 7px 50px;
+  }
+  
+  .myForm .create {
+	text-decoration: none;
+	color: #DC3545;
+  }
+
+  /* REGISTER PAGE FORM */
+  .myRegForm {
+	padding: 0 20rem;
+  }
+  
+  .form-group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+			flex-direction: column;
+	margin: 10px;
+  }
+  
+  .form-group select {
+	width: 14rem;
+	height: 32px;
+	outline: none;
+	border: 1px solid transparent;
+  }
+  
+  .divBtn {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -154,41 +209,65 @@ nav .nav-auth .register {
 	-webkit-box-pack: center;
 		-ms-flex-pack: center;
 			justify-content: center;
-	margin: 0 20px;
-	padding: 20px;
-	background-color: darkred;
-	color: #fff;
+	margin-top: 30px;
   }
   
-  .info {
-	text-align: center;
-	margin: 4rem 0;
+  .divBtn .login {
+	text-decoration: none;
+	color: #DC3545;
   }
+  
 
-  /* FOOTER */
-footer {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-		-ms-flex-direction: row;
-			flex-direction: row;
-	-webkit-box-pack: justify;
-		-ms-flex-pack: justify;
-			justify-content: space-between;
+  /* SEARCH PAGE */
+  /* FORM */
+  form {
+	margin: 5rem auto;
+  }
+  
+  form #cityInput {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid #000;
+	background: transparent;
+	width: 30rem;
+	margin: 10px 20px;
+	outline: none;
+  }
+  
+  form select {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid #000;
+	background: transparent;
+	outline: none;
+	margin: 10px 20px;
+  }
+  
+
+  /* JUMBOTRON IN MOBILINK PAGE*/
+  .jumbotron {
+	padding-top: 20vh;
+	background: transparent;
+	overflow: hidden;
 	-webkit-box-align: center;
 		-ms-flex-align: center;
 			align-items: center;
+	text-align: center;
+  }
+  
+  .jumbotron a {
+	text-decoration: none;
+	color: #DC3545;
+  }
+
+
+  /* FOOTER */
+  footer {
 	overflow: hidden;
-	padding: 3rem 25rem;
 	margin-top: 7rem;
-	background-color: darkred;
+	padding: 3rem 25rem;
+	background-color: #DC3545;
 	color: #fff;
   }
-  
-  footer p {
-	font-weight: 300;
-	font-size: 15px;
-  }
-  

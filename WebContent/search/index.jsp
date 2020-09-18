@@ -9,22 +9,24 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Donors Around Me</title>
-	<link rel="stylesheet" href="/BloodBank/styles/search.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="/BloodBank/styles/styles.css">
 </head>
 <body>
-	<header>
-		<nav>
-		  <span>
+	<header class="container">
+		<nav class="row">
+		  <span class="col">
 			BLOOD BANK
 		  </span>
-		  <ul class="nav-more">
-			<li><a href="#">LEARN MORE</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">TERMS</a></li>
+		  <ul class="nav-more col row">
+			<li><a href="#" class="col">EXPLORE</a></li>
+			<li><a href="#"  class="col">FAQ</a></li>
+			<li><a href="#"  class="col">TERMS</a></li>
 		  </ul>
-		  <ul class="nav-auth">
-			<li><a href="#">LOG IN</a></li>
-			<li><a class="register" href="#">REGISTER</a></li>
+  
+		  <ul class="nav-auth row">
+			<li class="col"><a href="#">LOG IN</a></li>
+			<li class="col"><a class="register" href="#">REGISTER</a></li>
 		  </ul>
 		</nav>
 		</header>
@@ -34,16 +36,67 @@
 			<p class="subheading">Select the categories to filter your search </p>
 		</div>
 
-	<form action="/BloodBank/search" method="get">
-		<input id="cityInput" name="city" type="text" placeholder="Search Donor by City">
-		<select id="bloodGroupInput" name="bloodGroup">
-			<option>A</option>
-			<option>B</option>
-			<option>AB</option>
-			<option>O</option>
-		</select>
-		<button type="submit" class="btn">Search</button>
-	</form>
+	<form class="container" action="/BloodBank/search" method="get">
+        <div class="row">
+        <input type="text" name="city" id="cityInput" class="col" placeholder="Search Donor by City">
+          <select name="bloodGroup" id="bloodGroupInput" class="col">
+                <option>A</option>
+                <option>B</option>
+                <option>AB</option>
+                <option>O</option>	
+          </select>
+        <button type="submit" class="btn btn-danger col">Search</button>
+        </div>
+	  </form>
+	  
+	  <div class="container">
+        <div class="row" style="gap: 20px;">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="..." class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Obi Favour</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, laudantium?</p>
+                <p class="card-text">Email</p>
+                <p class="card-text">Age</p>
+                <p class="card-text">Bloodgroup</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="..." class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Kelechi Felix</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, est.</p>
+                <p class="card-text">Email</p>
+                <p class="card-text">City</p>
+                <p class="card-text">Address</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	  </div>
+	  
+	  <footer>
+        <div class="row">
+        <h6 class="col">BLOOD BANK</h6>
+        <p class="col">DONOR</p>
+        <p class="col">SEEKER</p>
+        <p class="col">FAQ</p>
+        <p class="col">TERMS & CONDITIONS</p>
+        <p class="col">CONTACT US</p>
+        </div>
+	</footer>
 
 	<%
 		try {

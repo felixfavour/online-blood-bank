@@ -4,8 +4,9 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Become a Donor · BloodBank</title>
-		<link rel="stylesheet" href="/BloodBank/styles/register.css">
+		<title>Become a Donor ï¿½ BloodBank</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="/BloodBank/styles/styles.css">
 		<style type="text/css">
 			
 			  #dialog {
@@ -37,22 +38,23 @@
 		</style>
 	</head>
 	<body>
-		<header>
-			<nav>
-				<span>
-					BLOOD BANK			
-				</span>
-				<ul class="nav-more">
-					<li><a href="#">LEARN MORE</a></li>
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">TERMS</a></li>
-				</ul>
-				<ul class="nav-auth">
-					<li><a href="#">LOG IN</a></li>
-					<li><a class="register" href="#">REGISTER</a></li>
-				</ul>
+		<header class="container">
+			<nav class="row">
+			  <span class="col">
+				BLOOD BANK
+			  </span>
+			  <ul class="nav-more col row">
+				<li><a href="#" class="col">EXPLORE</a></li>
+				<li><a href="#"  class="col">FAQ</a></li>
+				<li><a href="#"  class="col">TERMS</a></li>
+			  </ul>
+		
+			  <ul class="nav-auth row">
+				<li class="col"><a href="#">LOG IN</a></li>
+				<li class="col"><a class="register" href="#">REGISTER</a></li>
+			  </ul>
 			</nav>
-		</header>
+			</header>
 		
 		<div class="appreciation">
 			<h2 class="heading">Get Started now</h2>
@@ -61,44 +63,45 @@
 
 		<form action="/BloodBank/register" method="post" class="myForm">
 
-		<div class="formFlex">
-	        <div class="formDetails">
+		<div class="formFlex row">
+	        <div class="form-group col">
 	            <label for="name">FULL NAME</label>
-	            <input  required="required" name="name" type="text" placeholder="Name">
-	        </div>
-	        <div class="formDetails">
+	            <input class="form-control"  required="required" name="name" type="text" placeholder="Name">
+			</div>
+
+	        <div class="form-group col">
 	            <label for="username">USERNAME</label>
-	            <input  required="required" name="username" type="text" placeholder="username">
+	            <input class="form-control"  required="required" name="username" type="text" placeholder="username">
 	        </div>
         </div>
 
-        <div class="formFlex">
-	        <div class="formDetails">
+        <div class="formFlex row">
+	        <div class="form-group col">
 	            <label for="email">EMAIL ADDRESS</label>
-	            <input  required="required" name="emailAddress" type="email" placeholder="holla@bbank.com">
+	            <input class="form-control"  required="required" name="emailAddress" type="email" placeholder="holla@bbank.com">
 	        </div>
-	        <div class="formDetails">
+	        <div class="form-group col">
 	            <label for="contact">CONTACT NUMBER</label>
-	            <input  required="required" name="contactNumber" type="text" placeholder="+234 132 32142">
+	            <input class="form-control"  required="required" name="contactNumber" type="text" placeholder="+234 132 32142">
 	        </div>
         </div>
 
-        <div class="formFlex">
-	        <div class="formDetails">
+        <div class="formFlex row">
+	        <div class="form-group col">
 	            <label for="password">PASSWORD</label>
 	            <input id="password" required="required" type="password" placeholder="password">
 	        </div>
-	        <div class="formDetails">
+	        <div class="form-group col">
 	            <label for="confirmpassword">CONFIRM PASSWORD</label>
 	            <input id="confirmPassword" required="required" name="password" type="password" placeholder="confirm password">
 	        </div>
         </div>
         
-        <div class="formFlex">
+        <div class="formFlex row">
 
-	         <div class="form-group">
-	           <label>BLOOD GROUP</label>
-	           <select name="bloodGroup">
+	         <div class="form-group row">
+	           <label class="col">BLOOD GROUP</label>
+	           <select class="col" name="bloodGroup">
 	                 <option>A</option>
 	                 <option>B</option>
 	                 <option>AB</option>
@@ -106,44 +109,45 @@
 	           </select>
 	         </div>
 
-	         <div class="form-group">
-	           <label>SEX</label>
-	           <select name="sex">
+	         <div class="form-group row">
+	           <label class="col">SEX</label>
+	           <select class="col" name="sex">
 	                 <option>Male</option>
 	                 <option>Female</option>
 	           </select>
 	         </div>
           
-	         <div class="formDetails">
+	         <div class="form-group col">
 	             <label for="weight">WEIGHT</label>
-	             <input  required="required" name="weight" type="number" placeholder="weight">
+	             <input class="form-control"  required="required" name="weight" type="number" placeholder="weight">
 	         </div>
         </div>
 
-        <div class="formFlex">
+        <div class="formFlex row">
         
-	        <div class="formDetails">
+	        <div class="form-group col">
 	            <label for="dateofbirth">DATE OF BIRTH</label>
-	            <input  required="required" name="dob" type="date" placeholder="select date of birth">
+	            <input class="form-control"  required="required" name="dob" type="date" placeholder="select date of birth">
 	        </div>
 	
-	        <div class="formDetails">
+	        <div class="form-group col">
 	            <label for="city">CITY</label>
-	            <input required="required" name="city" type="text" placeholder="City of Residence">
+	            <input class="form-control" required="required" name="city" type="text" placeholder="City of Residence">
 	        </div>
         </div>
 
         <div class="formFlex">
 	
-	        <div class="formDetails">
+	        <div class="form-group">
 	            <label for="address">ADDRESS</label>
-	            <input  required="required" name="address" type="text" placeholder="Residential Address">
+	            <input class="form-control"  required="required" name="address" type="text" placeholder="Residential Address">
 	        </div>
 
         </div>
-
-        <button id="submit" class="btn" type="submit">REGISTER</button>
-        <p>Already a donor? <a href="#" class="login">Log in</a></p>
+			<div class="divBtn">
+        <button id="submit" class="btn btn-danger" type="submit">REGISTER</button>
+		<p>Already a donor? <a href="#" class="login">Log in</a></p>
+		</div>
     </form>
     
     <div id="dialog">
@@ -161,15 +165,15 @@
     	</p>
     </div>
 
-    <footer>
-        <div class="footerdetails">
-        <h3>BLOOD BANK</h3>
-        <p>DONOR</p>
-        <p>SEEKER</p>
-        <p>FAQ</p>
-        <p>TERMS & CONDITIONS</p>
-        <p>CONTACT US</p>
-        </div>
+	<footer>
+		<div class="row">
+		<h6 class="col">BLOOD BANK</h6>
+		<p class="col">DONOR</p>
+		<p class="col">SEEKER</p>
+		<p class="col">FAQ</p>
+		<p class="col">TERMS & CONDITIONS</p>
+		<p class="col">CONTACT US</p>
+		</div>
 	</footer>
 	
 	<script type="text/javascript">
