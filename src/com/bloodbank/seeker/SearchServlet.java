@@ -35,7 +35,6 @@ public class SearchServlet extends HttpServlet {
 		String bloodGroup = request.getParameter("bloodGroup");
 		
 		// Add donors list to the [request] as response from the Servlet
-		
 		ArrayList<Donor> donors = searchDonors(city, bloodGroup);
 		Lifesaver lifesaver = searchLifesaver(city);
 		
@@ -43,11 +42,17 @@ public class SearchServlet extends HttpServlet {
 		request.setAttribute("city", city);
 		request.setAttribute("lifesaver", lifesaver);
 		
+		// Send Donors back to the Client ("search/index.jsp")
 		RequestDispatcher view = request.getRequestDispatcher("search/index.jsp");
 		view.forward(request, response);
 		
 	}
 	
+	/**
+	 * @param cityParam uses filters the number of Donors per city
+	 * @param bloodGroupParam filters the number of Donors per their bloodGroup
+	 * Method to Search Donors in Database
+	 */
 	private ArrayList<Donor> searchDonors(String cityParam, String bloodGroupParam) {
 		
 		ArrayList<Donor> donors = new ArrayList<Donor>();
@@ -110,7 +115,11 @@ public class SearchServlet extends HttpServlet {
 		
 		return donors;
 	}
-
+	
+	/**
+	 * @param cityParam uses cityParam to filter the number of Lifesavers per city
+	 * Method to Search Lifesaver in Database
+	 */
 	private Lifesaver searchLifesaver(String cityParam) {
 		Lifesaver lifesaver = null;		
 		try {

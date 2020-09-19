@@ -10,23 +10,22 @@
 <link rel="stylesheet" href="/BloodBank/styles/styles.css">
 </head>
 <body>
-    <header class="container">
-        <nav class="row">
-          <span class="col">
-            BLOOD BANK
-          </span>
-          <ul class="nav-more col row">
-            <li><a href="#" class="col">EXPLORE</a></li>
-            <li><a href="#"  class="col">FAQ</a></li>
-            <li><a href="#"  class="col">TERMS</a></li>
-          </ul>
-    
-          <ul class="nav-auth row">
-            <li class="col"><a href="#">LOG IN</a></li>
-            <li class="col"><a class="register" href="#">REGISTER</a></li>
-          </ul>
-        </nav>
-        </header>
+		<header>
+			<div class="container">
+		        <nav class="row">
+		        	
+		        	<div class="logo-container col-4">
+		            	<a href="/BloodBank"><img class="" src="/BloodBank/img/bb-logo.png"></a>
+		            </div>
+		            <div class="auth-methods col-8">
+			          <ul class="nav-auth row">
+			            <li class="offset-md-6 col-md-3"><a href="login/index.jsp">LOG IN</a></li>
+			            <li class="col-md-3"><a class="register" href="register/index.jsp">REGISTER</a></li>
+			          </ul>
+		            </div>
+		        </nav>
+		    </div>
+		</header>
             
             <div class="appreciation">
                 <h2 class="heading">Frequently Asked Questions</h2>
@@ -113,16 +112,20 @@
                 </div>
               </section>
     
-              <footer>
-                <div class="row">
-                <h6 class="col">BLOOD BANK</h6>
-                <p class="col">DONOR</p>
-                <p class="col">SEEKER</p>
-                <p class="col">FAQ</p>
-                <p class="col">TERMS & CONDITIONS</p>
-                <p class="col">CONTACT US</p>
-                </div>
-            </footer>
+        
+        <footer>
+        	<div class="container">
+	           <div class="row">
+	            <a href="/BloodBank" class="col-md-4">
+	            	<img class="img-fluid" src="/BloodBank/img/bb-logo.png">
+	            </a>
+	            <a href="/BloodBank/donor/index.jsp" class=" offset-md-4 col-md-1">DONOR</a>
+	            <a href="/BloodBank/seeker/index.jsp" class="col-md-1">SEEKER</a>
+	            <a href="/BloodBank/faq/index.jsp" class="col-md-1">FAQs</a>
+	            <a href="/BloodBank/terms/index.jsp" class="col-md-1">TERMS</a>
+	           </div>
+        	</div>
+       </footer>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

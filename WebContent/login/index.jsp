@@ -32,7 +32,7 @@ pageEncoding="ISO-8859-1"%>
       <p class="subheading">Login as a DONOR here</p>
   </div>
 
-  <form method="post" class="myForm">
+  <form method="post" class="myForm" action="/BloodBank/login">
     <div class="form-group">
       <label for="firstname">USERNAME</label>
       <input class="form-control" type="text" name="username" placeholder="Your username" />

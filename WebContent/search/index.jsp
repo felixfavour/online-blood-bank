@@ -13,23 +13,24 @@
 	<link rel="stylesheet" href="/BloodBank/styles/styles.css">
 </head>
 <body>
-	<header class="container">
-		<nav class="row">
-		  <span class="col">
-			BLOOD BANK
-		  </span>
-		  <ul class="nav-more col row">
-			<li><a href="#" class="col">EXPLORE</a></li>
-			<li><a href="#"  class="col">FAQ</a></li>
-			<li><a href="#"  class="col">TERMS</a></li>
-		  </ul>
-  
-		  <ul class="nav-auth row">
-			<li class="col"><a href="#">LOG IN</a></li>
-			<li class="col"><a class="register" href="#">REGISTER</a></li>
-		  </ul>
-		</nav>
+		<header>
+			<div class="container">
+		        <nav class="row">
+		        	
+		        	<div class="logo-container col-4">
+		            	<a href="/BloodBank"><img class="" src="/BloodBank/img/bb-logo.png"></a>
+		            </div>
+		            <div class="auth-methods col-8">
+			          <ul class="nav-auth row">
+			            <li class=" offset-md-6 col-md-2"><a href="login/index.jsp">DONOR</a></li>
+			            <li class=" col-md-2"><a href="login/index.jsp">FAQs</a></li>
+			            <li class=" col-md-2"><a href="login/index.jsp">TERMS</a></li>
+			          </ul>
+		            </div>
+		        </nav>
+		    </div>
 		</header>
+		<hr>
 		
 		<div class="appreciation">
 			<h2 class="heading">Find a Donor</h2>
@@ -38,66 +39,19 @@
 
 	<form class="container" action="/BloodBank/search" method="get">
         <div class="row">
-        <input type="text" name="city" id="cityInput" class="col" placeholder="Search Donor by City">
-          <select name="bloodGroup" id="bloodGroupInput" class="col">
+        <input type="text" name="city" id="cityInput" class="search-row col" placeholder="Search Donor by City">
+          <select name="bloodGroup" id="bloodGroupInput" class="search-row col-2">
                 <option>A</option>
                 <option>B</option>
                 <option>AB</option>
                 <option>O</option>	
           </select>
-        <button type="submit" class="btn btn-danger col">Search</button>
+        <button type="submit" class="button-default search-row col-2">Search</button>
         </div>
 	  </form>
 	  
 	  <div class="container">
-        <div class="row" style="gap: 20px;">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="..." class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Obi Favour</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, laudantium?</p>
-                <p class="card-text">Email</p>
-                <p class="card-text">Age</p>
-                <p class="card-text">Bloodgroup</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="..." class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Kelechi Felix</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, est.</p>
-                <p class="card-text">Email</p>
-                <p class="card-text">City</p>
-                <p class="card-text">Address</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-	  </div>
 	  
-	  <footer>
-        <div class="row">
-        <h6 class="col">BLOOD BANK</h6>
-        <p class="col">DONOR</p>
-        <p class="col">SEEKER</p>
-        <p class="col">FAQ</p>
-        <p class="col">TERMS & CONDITIONS</p>
-        <p class="col">CONTACT US</p>
-        </div>
-	</footer>
-
 	<%
 		try {
 			// For Donors
@@ -108,13 +62,14 @@
 			boolean isDonorSearchEmpty = donors.size() == 0;
 			
 			if (!isDonorSearchEmpty) {
-				out.print("<div class=\"cards\">");
+				out.print("<div class=\"row\">");
 				for (int i = 0; i < donors.size(); i++) {
 					Donor donor = donors.get(i);
 					out.print(
-							"<div class=\"card_details\">"+
-							"<img class=\"card-img\" src=\"/BloodBank/img/chris_rock.png\" alt=\"photo\">"+
-							"<div class=\"texts\">"+
+							"<div class=\"card-details col-md-12 col-lg-6\">"+
+							"<div class=\"row \">"+
+							"<img class=\"card-img col-6\" src=\"/BloodBank/img/chris_rock.png\" alt=\"photo\">"+
+							"<div class=\"texts col-6\">"+
 							"<h3>"+donor.getName()+"</h3>"+
 							"<p><b>Blood Group: </b>"+donor.getBloodGroup()+"</p>"+
 							"<p><b>City: </b>"+donor.getCity()+"</p>"+
@@ -123,6 +78,7 @@
 							"<p><b>Weight: </b>"+String.valueOf(donor.getWeight())+"kg</p>"+
 							"<p><b>Contact Number: </b>"+donor.getContactNumber()+"</p>"+
 							"<p><b>Date of Birth: </b>"+donor.getDob()+"</p>"+
+							"</div>"+
 							"</div>"+
 							"</div>"
 					);
@@ -134,7 +90,7 @@
 				out.print(
 						"<div class=\"lifesaver\">" +
 						"<h3 class=\"no-donors-message\"> SORRY, DONORS ARE NOT AVAILABE WITH THE FOLLOWING BLOOD GROUP AND AREA </h3>"+
-						"<button id=\"lifesaverBtn\">Check for Lifesaver</button>" +
+						"<button class=\"button-default\" id=\"lifesaverBtn\">Check for Lifesaver</button>" +
 						"</div>");
 				
 				
@@ -143,15 +99,16 @@
 				
 				if (!isLifesaverSearchEmpty) {
 					out.print("<div id=\"lifesaverSection\" class=\"lifesaver\" hidden >"+
-							"<div class=\"cards\">"+
-							"<div class=\"card_details\">"+
-							"<img class=\"card-img\" src=\"/BloodBank/img/chris_rock.png\" alt=\"photo\">"+
-							"<div class=\"texts\">"+
+							"<div class=\"card-details col-md-12 col-lg-6\">"+
+							"<div class=\"row \">"+
+							"<img class=\"card-img col-6\" src=\"/BloodBank/img/chris_rock.png\" alt=\"photo\">"+
+							"<div class=\"texts col-6\">"+
 							"<h3>"+lifesaver.getName()+"</h3>"+
 							"<p><b>City: </b>"+lifesaver.getCity()+"</p>"+
 							"<p><b>Contact Number: </b>"+lifesaver.getContactNumber()+"</p>"+
 							"<p><b>City: </b>"+lifesaver.getEmail()+"</p>"+
 							"</div>"+
+							"</div>" +
 							"</div>" +
 							"</div>");
 				} else {
@@ -164,6 +121,21 @@
 		
 		} catch(NullPointerException ex) {}
 	%>
+	</div>
+        
+        <footer>
+        	<div class="container">
+	           <div class="row">
+	            <a href="/BloodBank" class="col-md-4">
+	            	<img class="img-fluid" src="/BloodBank/img/bb-logo.png">
+	            </a>
+	            <a href="/BloodBank/donor/index.jsp" class=" offset-md-4 col-md-1">DONOR</a>
+	            <a href="/BloodBank/seeker/index.jsp" class="col-md-1">SEEKER</a>
+	            <a href="/BloodBank/faq/index.jsp" class="col-md-1">FAQs</a>
+	            <a href="/BloodBank/terms/index.jsp" class="col-md-1">TERMS</a>
+	           </div>
+        	</div>
+       </footer>
 	
 <script type="text/javascript">
 

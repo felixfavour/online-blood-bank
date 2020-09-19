@@ -6,11 +6,22 @@ body {
           box-sizing: border-box;
   background-color: #f8e3e7;
   font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+/* HEADER */
+header .row {
+	padding: 0;
+}
+
+hr {
+	margin: 0;
 }
 
 /* NAVIGATIONS */
 nav {
 	padding: 2rem 5rem;
+	text-align: center;
   }
   
   nav .nav-more {
@@ -39,6 +50,17 @@ nav {
 	padding: 10px 20px;
 	color: #fff;
   }
+  
+  nav .logo-container img {
+  	max-width: 70%;
+  }
+  
+  nav ul {
+  	margin-top: 7%;
+  	text-align: right;
+  }
+  
+  
 
 /* LANDING PAGE */
 .hero {
@@ -56,6 +78,23 @@ nav {
 		-ms-flex-pack: center;
 			justify-content: center;
 	height: 70vh;
+  }
+  
+  .button-default {  	
+    border: 1px solid transparent;
+    background-color: #DC3545;
+    margin: 5px;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  .button-default:hover {  	
+  	text-decoration: none;
+    border: 1px solid transparent;
+    background-color: #DC3545;
+    margin: 5px;
+    padding: 10px 20px;
+    color: #fff;
   }
   
   .hero .nav-auth {
@@ -225,24 +264,23 @@ nav {
   }
   
   form #cityInput {
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	border-bottom: 1px solid #000;
-	background: transparent;
-	width: 30rem;
-	margin: 10px 20px;
-	outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #000;
+    background: transparent;
+    margin-right: 10px;
+    font-size: 18px;
+    outline: none;
   }
   
   form select {
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	border-bottom: 1px solid #000;
-	background: transparent;
-	outline: none;
-	margin: 10px 20px;
+    border: none;
+    padding: 6px;
+    font-size: 18px;
+    margin-right: 10px;
+    background-color: transparent;
+    border-bottom: 2px solid;
   }
   
 
@@ -261,13 +299,103 @@ nav {
 	text-decoration: none;
 	color: #DC3545;
   }
+  
+  /* CARD DETAILS */
+  .home-cards .card-title {
+  	text-align: center;
+  	font-size: 1.7rem;
+  	font-weight: bold;
+  }
+  
+  .card-details {
+  	margin-bottom: 10px;
+  	background-color: white;
+  	padding: 12px;
+  	margin: 10px auto;
+  }
+  
+  .card-details h3 {
+  	font-weight: bolder;
+  	border-bottom: 3px solid #f8e3e7;
+  }
+  
+  .card-details p {
+  	margin-bottom: 2%;
+  }
+  
+  .card-details p b {
+	color: #DC3545;
+  }
+  
+  @media(min-width: 1000px) {
+	  .card-details {
+	  	max-width: 49%;
+	  }
+  }
+  
+  .card-details img {
+  	object-fit: cover;
+  }
+  
+  .no-donors-message {
+  	font-family: "Roboto", sans-serif;
+  	font-size: 16px
+  }
+  
+  .lifesaver {
+  	text-align: center;
+  }
+  	
+  #dialog {
+    background-color: #f8e3e7;
+    border: 6px solid darkred;
+    top: auto;
+    right: auto;
+    padding: 10px;
+    margin: auto;
+    width: 30%;
+    text-align: center
+  }
+
+  #dialog header {
+    background-color: darkred;
+    padding: 8px;
+    color: #f8e3e7;
+  }
+
+  #dialog header .header {
+    font-size: 16px;
+  }
+
+  #dialog .close-btn {
+    float: right;
+    font-size: 10px;
+  }
 
 
   /* FOOTER */
   footer {
 	overflow: hidden;
 	margin-top: 7rem;
-	padding: 3rem 25rem;
+	padding: 16px;
+	position: absolute;
+	width: 100%;
 	background-color: #DC3545;
 	color: #fff;
   }
+	footer .row {
+		padding: 0;
+	}
+	
+	footer .row img {
+		filter: brightness(100);
+	}
+	
+	footer .row a {
+		color: white;
+		margin: auto;
+	}
+	
+	footer .row a:hover {
+		text-decoration: none;
+	}

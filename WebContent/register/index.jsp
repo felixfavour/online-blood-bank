@@ -4,57 +4,27 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Become a Donor ï¿½ BloodBank</title>
+		<title>Become a Donor · BloodBank</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 		<link rel="stylesheet" href="/BloodBank/styles/styles.css">
-		<style type="text/css">
-			
-			  #dialog {
-			    background-color: #f8e3e7;
-			    border: 6px solid darkred;
-			    top: auto;
-			    right: auto;
-			    padding: 10px;
-			    margin: auto;
-			    width: 30%;
-			    text-align: center
-			  }
-			
-			  #dialog header {
-			    background-color: darkred;
-			    padding: 8px;
-			    color: #f8e3e7;
-			  }
-			
-			  #dialog header .header {
-			    font-size: 16px;
-			  }
-			
-			  #dialog .close-btn {
-			    float: right;
-			    font-size: 10px;
-			  }
-  
-		</style>
 	</head>
 	<body>
-		<header class="container">
-			<nav class="row">
-			  <span class="col">
-				BLOOD BANK
-			  </span>
-			  <ul class="nav-more col row">
-				<li><a href="#" class="col">EXPLORE</a></li>
-				<li><a href="#"  class="col">FAQ</a></li>
-				<li><a href="#"  class="col">TERMS</a></li>
-			  </ul>
-		
-			  <ul class="nav-auth row">
-				<li class="col"><a href="#">LOG IN</a></li>
-				<li class="col"><a class="register" href="#">REGISTER</a></li>
-			  </ul>
-			</nav>
-			</header>
+		<header>
+			<div class="container">
+		        <nav class="row">
+		        	
+		        	<div class="logo-container col-4">
+		            	<a href="/BloodBank"><img class="" src="/BloodBank/img/bb-logo.png"></a>
+		            </div>
+		            <div class="auth-methods col-8">
+			          <ul class="nav-auth row">
+			            <li class="offset-md-6 col-md-3"><a href="login/index.jsp">LOG IN</a></li>
+			            <li class="col-md-3"><a class="register" href="register/index.jsp">REGISTER</a></li>
+			          </ul>
+		            </div>
+		        </nav>
+		    </div>
+		</header>
 		
 		<div class="appreciation">
 			<h2 class="heading">Get Started now</h2>
@@ -89,11 +59,11 @@
         <div class="formFlex row">
 	        <div class="form-group col">
 	            <label for="password">PASSWORD</label>
-	            <input id="password" required="required" type="password" placeholder="password">
+	            <input class="form-control"   id="password" required="required" type="password" placeholder="password">
 	        </div>
 	        <div class="form-group col">
 	            <label for="confirmpassword">CONFIRM PASSWORD</label>
-	            <input id="confirmPassword" required="required" name="password" type="password" placeholder="confirm password">
+	            <input class="form-control"   id="confirmPassword" required="required" name="password" type="password" placeholder="confirm password">
 	        </div>
         </div>
         
@@ -101,7 +71,7 @@
 
 	         <div class="form-group row">
 	           <label class="col">BLOOD GROUP</label>
-	           <select class="col" name="bloodGroup">
+	           <select class="col form-control" name="bloodGroup">
 	                 <option>A</option>
 	                 <option>B</option>
 	                 <option>AB</option>
@@ -111,7 +81,7 @@
 
 	         <div class="form-group row">
 	           <label class="col">SEX</label>
-	           <select class="col" name="sex">
+	           <select class="col form-control" name="sex">
 	                 <option>Male</option>
 	                 <option>Female</option>
 	           </select>
@@ -164,17 +134,20 @@
     		%>
     	</p>
     </div>
-
-	<footer>
-		<div class="row">
-		<h6 class="col">BLOOD BANK</h6>
-		<p class="col">DONOR</p>
-		<p class="col">SEEKER</p>
-		<p class="col">FAQ</p>
-		<p class="col">TERMS & CONDITIONS</p>
-		<p class="col">CONTACT US</p>
-		</div>
-	</footer>
+        
+        <footer>
+        	<div class="container">
+	           <div class="row">
+	            <a href="/BloodBank" class="col-md-4">
+	            	<img class="img-fluid" src="/BloodBank/img/bb-logo.png">
+	            </a>
+	            <a href="/BloodBank/donor/index.jsp" class=" offset-md-4 col-md-1">DONOR</a>
+	            <a href="/BloodBank/seeker/index.jsp" class="col-md-1">SEEKER</a>
+	            <a href="/BloodBank/faq/index.jsp" class="col-md-1">FAQs</a>
+	            <a href="/BloodBank/terms/index.jsp" class="col-md-1">TERMS</a>
+	           </div>
+        	</div>
+       </footer>
 	
 	<script type="text/javascript">
 	
