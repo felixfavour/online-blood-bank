@@ -372,6 +372,14 @@ nav {
     font-size: 10px;
   }
 
+  /* JUMBOTRON IN THE TERMS/CONDITIONS PAGE WITH .TRON CLASS */
+  .tron {
+	padding-top: 10vh;
+	background-color: #fff;
+	margin: 4rem 10rem;
+	text-align: left;
+  }
+
 
   /* FOOTER */
   footer {
